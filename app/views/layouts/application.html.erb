@@ -8,7 +8,23 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
+    <nav class="navbar navbar-dark" style="background-color: #006400">
+       <!--this is here until I can find a search icon-->
+       <div>
+        <button type="button" class ="btn btn-success">SEARCH</button> 
+        <!--data-toggle = "button" aria-pressed="false" autocomplete = "off"-->
+        <button type = "button" class = "btn btn-link">HOME</button>
+        <button type = "button" class = "btn btn-link">MY BOOKS</button>
+      </div>
+      
+      <div float = "right">
+        <!--until I can get a logout button down-->
+        <button type = "button" class = "btn btn-link">LOGOUT</button>
+      </div>
+      
+    </nav>
     <%= yield %>
   </body>
 </html>
