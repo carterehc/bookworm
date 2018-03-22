@@ -36,6 +36,7 @@ gem 'jquery-rails'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap', '~> 4.0.0'
+gem 'octicons'
 
 
 # Use Capistrano for deployment
