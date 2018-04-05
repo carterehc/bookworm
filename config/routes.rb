@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   get 'books/index'
 
   get 'books/add'
+  post 'books/create'
+  
+  #resources :books/
 
   get 'books/delete'
 

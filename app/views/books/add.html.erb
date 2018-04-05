@@ -1,2 +1,20 @@
 <h1>Books#add</h1>
+
+<%= form_with scope: :book, url: books_create_path, local:true do |f| %> <!--:author, -->
+    <p>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %> <!--form.method-->
+    </p>
+    <%= f.radio_button :age, "child"%>
+    <p>
+        <%= f.label :yr_published%><br>
+    </p>
+    
+    
+
+<p>
+<%= f.submit "Create" %>
+</p>
 <p>Find me in app/views/books/add.html.erb</p>
+<% end %>
+
