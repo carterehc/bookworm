@@ -1,20 +1,35 @@
 <h1>Books#add</h1>
+<% @page_title = "Add New Book"%>
 
-<%= form_with scope: :book, url: books_create_path, local:true do |f| %> <!--:author, -->
+<%= form_with model: @book, url: books_create_path, local:true do |f| %> <!--:author, -->
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %> <!--form.method-->
     </p>
+    <div class="dropdown">
+        <button class = "btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown">Author
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <% @authors.each do |a| %>
+                <% a.fName %><%a.lName%>
+            <%end%>
+        </ul>
+    
+    <button class="btn btn-outline-success"><%= link_to "Add Author", authors_add_path, style:'color:#006400;' %></button> <!--link_to does not generate input type= 'submit'-->
+    </div>
+    <p>
+        <%= f%>
+    </p>
+    
     <%= f.radio_button :age, "child"%>
     <p>
         <%= f.label :yr_published%><br>
     </p>
     
     
-
 <p>
-<%= f.submit "Create" %>
+<%= f.submit "Submit" %>
 </p>
-<p>Find me in app/views/books/add.html.erb</p>
+
 <% end %>
 

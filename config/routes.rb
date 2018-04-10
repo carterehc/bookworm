@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
-  get 'books/index'
-
-  get 'books/add'
-  post 'books/create'
   
-  #resources :books/
+  #resources :books, :authors do
+    
+    get 'books/index'
 
-  get 'books/delete'
+    get 'books/add'
+    post 'books/create'
+  
+    get 'books/delete'
 
-  get 'books/update'
+    get 'books/update'
+    
+    get 'authors/add'
+    post 'authors/create'
+  #end
 
   get 'welcome/index'
 

@@ -1,7 +1,8 @@
 class AuthorsController < ApplicationController
-    def new
+    def add
         
     end
     
-    
+    def create
+    end
 end

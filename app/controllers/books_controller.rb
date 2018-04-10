@@ -1,8 +1,11 @@
 class BooksController < ApplicationController
   def index
+    @books = Book.all
+    @authors = Author.all
   end
   
   def add
+    @authors = Author.all
     @book = Book.new    #does not yet belong to database
   end
 
@@ -29,6 +32,6 @@ class BooksController < ApplicationController
   
   private
     def book_params
-      params.require(:book).permit(:title, :yr_published, :read, :yr_read )
+      params.require(:book).permit(:title, :yr_read, :yr_published, :read, :own, :ISBN, :edition, :want_own, :want_read, :times_read)
     end
 end
