@@ -11,11 +11,13 @@ class BooksController < ApplicationController
 
   def create
     render plain: params[:book].inspect
-    @book = Book.new(params[:book])    #triggers validations
     @author = Author.new()
+
+
     if @author.new_record?
       @author.save
     end
+    @book = Book.new(params[:book])    #triggers validations
     
     if @book.save    #saved to db?
       render 'index'

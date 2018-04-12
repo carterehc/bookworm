@@ -18,7 +18,16 @@
     <button class="btn btn-outline-success"><%= link_to "Add Author", authors_add_path, style:'color:#006400;' %></button> <!--link_to does not generate input type= 'submit'-->
     </div>
     <p>
-        <%= f%>
+        <%= check_box_tag(:want_read, value =1) %>
+        <%= label_tag(:want_read, "To Read")%>
+        <br>
+        
+        <% if check_box_tag%>
+        <%= check_box_tag(:read, value=1) %>
+        <%= label_tag(:read, "Read")%>
+        
+        <%#if %>
+        <%#end%>
     </p>
     
     <%= f.radio_button :age, "child"%>
@@ -32,4 +41,3 @@
 </p>
 
 <% end %>
-
