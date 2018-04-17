@@ -5,13 +5,13 @@ class BooksController < ApplicationController
   end
   
   def add
-    @authors = Author.all
+    @authors = Author.new
     @book = Book.new    #does not yet belong to database
   end
 
   def create
     render plain: params[:book].inspect
-    @author = Author.new()
+    @author = Author.new
 
 
     if @author.new_record?

@@ -2,40 +2,58 @@
 <% @page_title = "Add New Book"%>
 
 <%= form_with model: @book, url: books_create_path, local:true do |f| %> <!--:author, -->
+    <tr>
+        <td>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %> <!--form.method-->
+    </p></td>
+    <td>
+    <p>
+    <%= f.label :yr_published%><br>
+    <%= f.text_field :yr_published%>
     </p>
-    <div class="dropdown">
+    </td>
+    <tr>
+    <p>
+      <%= f.label :ISBN %><br>
+      <%= f.text_field :ISBN %>
+    </p>
+    
+    <p>  
+      <%= check_box_tag(:read)%>
+      <%= label_tag(:read, "Already read this book")%><br>
+      
+      <%= check_box_tag(:want_read)%>
+      <%= label_tag(:want_read, "I want to read this book")%><br>
+      
+      <%=check_box_tag(:own) %>
+      <%= label_tag(:own, "I own this book")%><br>
+      
+      <%= check_box_tag(:want_own)%><br>
+      <%= label_tag(:want_own, "I want to own this book")%>
+      
+    </p>
+    <p>
+    <>
+
+    <!--<div class="dropdown">
         <button class = "btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown">Author
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-            <% @authors.each do |a| %>
-                <% a.fName %><%a.lName%>
-            <%end%>
-        </ul>
-    
+            <%# @authors.each do |a| %>
+                <%# a.fName %><#%a.lName%>
+            <%#end%>
+        </ul>-->
+    <div>
     <button class="btn btn-outline-success"><%= link_to "Add Author", authors_add_path, style:'color:#006400;' %></button> <!--link_to does not generate input type= 'submit'-->
     </div>
-    <p>
-        <%= check_box_tag(:want_read, value =1) %>
-        <%= label_tag(:want_read, "To Read")%>
-        <br>
+    
         
-        <% if check_box_tag%>
-        <%= check_box_tag(:read, value=1) %>
-        <%= label_tag(:read, "Read")%>
+        <%# if check_box_tag%>
+        <%#= check_box_tag(:read, value=1) %>
+        <%#= label_tag(:read, "Read")%>
         
-        <%#if %>
-        <%#end%>
-    </p>
-    
-    <%= f.radio_button :age, "child"%>
-    <p>
-        <%= f.label :yr_published%><br>
-    </p>
-    
-    
 <p>
 <%= f.submit "Submit" %>
 </p>
