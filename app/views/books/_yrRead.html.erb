@@ -1,8 +1,0 @@
-<select>
-    <option value = 0>Times read:</option>
-    <% for num in actions.each do |ref| %>
-        <%= link_to_if( ref.key?(:disable)==false, "#{ref[:menu_name]}", ref[:link_url])%>
-        <br>
-      <% end %>
-  </ul>
-</select>
