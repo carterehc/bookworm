@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'execjs'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
-
+gem 'bcrypt'
 gem 'jquery-datatables-rails'
 
 # Use CoffeeScript for .coffee assets and views
