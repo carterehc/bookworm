@@ -10,6 +10,6 @@ $(document).ready ->
 
 
  
-$(document).ready
-    $('#books_index').DataTable()
+#$(document).ready
+#   $('#books_index').DataTable()
         
