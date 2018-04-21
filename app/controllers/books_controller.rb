@@ -17,9 +17,10 @@ class BooksController < ApplicationController
     if @author.new_record?
       @author.save
     end
-    @book = Book.new(params[:book])    #triggers validations
+    @book = Book.new(book_params)   #triggers validations
     
     if @book.save    #saved to db?
+      flash[:success] = "Book Added!"
       render 'index'
       #else render
     end

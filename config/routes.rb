@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  
-  resources :users
+  root 'static_pages#home'
+
   
   get 'users/new'
 
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   #end
 
   get 'welcome/index'
+  
+  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
