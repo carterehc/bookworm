@@ -1,5 +1,5 @@
-class WelcomeController < ApplicationController
+class StaticPagesController < ApplicationController
   def home
-    
   end
+  
 end
