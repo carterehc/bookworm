@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    has_many :books
     before_save {self.username = username.downcase}
     validates :username, presence: true, length: {minimum: 1, maximum: 100}, uniqueness: {case_sensitive: false}
     
