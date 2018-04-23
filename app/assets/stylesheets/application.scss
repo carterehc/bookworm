@@ -21,20 +21,10 @@
 //@import "bootstrap-sprockets";
 
 /*header*/
-#logo{
-    float:left;
-    margin-right: 12px;
-    font-size: 1.7em;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    padding-top: 9px;
-    font-weight: bold;
-}
-
-#logo:hover{
-    color: #fff;
-    text-decoration: none;
+.navbar{
+    
+    background-color: #9CCC65;
+    border-color: #9CCC65;   
 }
 
 /*universal*/
@@ -101,11 +91,11 @@ p{
     .form_control{
         color: $state-danger-text;
     }
-}
+}*/
 
 @mixin box_sizing{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     
-}*/
+}
