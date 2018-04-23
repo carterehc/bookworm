@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in(@user)    #signing up logs the user in
       flash[:success] = "Welcome to BookWorm"
       redirect_to user_path(@user.id)
     else

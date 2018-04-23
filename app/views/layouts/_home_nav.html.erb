@@ -3,8 +3,15 @@
       <div class= "container">
         <nav>
           <ul class = "nav navbar-nav navbar-right">
-            <li><%= link_to "Home", "/" %></li>
-            <li><%= link_to "Login", "/login" %></li>
+            <%if logged_in? %>
+              <li><%= link_to "Home", current_user %></li>
+              <li><%= link_to "My Books", '#'%></li>
+              <li><%= link_to "Logout", '/logout', method: :delete %></li>
+              
+            <% else%>    <!--user not logged in-->
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to "Login", "/login" %></li>
+            <%end%>
           </ul>
         </nav>
       </div>
