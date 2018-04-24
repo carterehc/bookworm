@@ -1,28 +1,18 @@
 class BooksController < ApplicationController
-  def index
-    @books = Book.all
-    @authors = Author.all
-  end
+  before_action :logged_in_user, only: [:create, :destroy]
   
-  def add
-    @authors = Author.new
+  def new
     @book = Book.new    #does not yet belong to database
   end
 
   def create
-    render plain: params[:book].inspect
-    @author = Author.new
-
-
-    if @author.new_record?
-      @author.save
-    end
-    @book = Book.new(book_params)   #triggers validations
+    @book = current_user.books.build(book_params)   #triggers validations
     
     if @book.save    #saved to db?
       flash[:success] = "Book Added!"
-      render 'index'
-      #else render
+      redirect_to user_path(current_user.id)
+    else
+      render 'new'
     end
   end
 
@@ -35,6 +25,6 @@ class BooksController < ApplicationController
   
   private
     def book_params
-      params.require(:book).permit(:title, :yr_read, :yr_published, :read, :own, :ISBN, :edition, :want_own, :want_read, :times_read)
+      params.require(:book).permit(:title, :yr_read, :yr_published, :read, :own, :ISBN, :edition, :want_own, :want_read, :times_read, :author_first, :author_last)
     end
 end

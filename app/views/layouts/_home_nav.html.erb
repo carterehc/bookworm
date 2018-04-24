@@ -4,8 +4,8 @@
         <nav>
           <ul class = "nav navbar-nav navbar-right">
             <%if logged_in? %>
-              <li><%= link_to "Home", current_user %></li>
-              <li><%= link_to "My Books", '#'%></li>
+              <li><%= link_to "My Books", current_user %></li>
+              <li><%= link_to "Add Book", new_book_path %></li>
               <li><%= link_to "Logout", '/logout', method: :delete %></li>
               
             <% else%>    <!--user not logged in-->

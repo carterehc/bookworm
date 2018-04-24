@@ -1,3 +1,14 @@
 <% provide(:title, @user.username)%>
 <%= render 'layouts/home_nav' %>
-<%= @user.username %>
+    <h2><%= @user.username %></h2>
+<div class='row'>
+    <div class= 'col-md-8'>
+        <%if @user.books.any?%>
+            <h3>Books (<%= @user.books.count %>)</h3>
+            <ol class= 'books'>
+                <%= render @books%>
+            </ol>
+            <%= will_paginate @books %>
+        <%end%>
+    </div>
+</div>
