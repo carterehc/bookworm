@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422193243) do
+ActiveRecord::Schema.define(version: 20180424124939) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "fName"
-    t.string "lName"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +33,8 @@ ActiveRecord::Schema.define(version: 20180422193243) do
     t.bigint "author_id"
     t.string "tag"
     t.bigint "user_id"
+    t.string "author_first"
+    t.string "author_last"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
