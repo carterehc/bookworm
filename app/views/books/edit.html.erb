@@ -1,27 +1,23 @@
 <% provide(:title, 'Edit Book') %>
 <%= render 'layouts/home_nav'%>
-<h2><%= "Edit Book #{@book.title}"</h2>
+<h2><%= "Edit Book: #{@book.title}" %> </h2>
 <div class='row'>
         <%= form_for(@book) do | f| %>
             <td><p>
                 <%= f.label :author_first %><br>
-                <%= f.text_field :author_first%>
-            </p></td>
+                <%= f.text_field :author_first, :value => @book.author_first %></p></td>
             <p><td>
                 <%= f.label :author_last %><br>
-                <%= f.text_field :author_last %>
-            </p></td>
+                <%= f.text_field :author_last, :value => @book.author_last %></p></td>
             <td><p>
                 <%= f.label :yr_published%><br>
-                <%= f.text_field :yr_published%>
-            </p></td>
+                <%= f.text_field :yr_published, :value => @book.yr_published%></p></td>
             <td><p>
                 <%= f.label :ISBN %><br>
-                <%= f.text_field :ISBN %>
-            </p></td>
+                <%= f.text_field :ISBN, :value => @book.ISBN %></p></td>
             <td><p>  
                 <%= check_box_tag(:read)%>
-                <%= label_tag(:read, "Already read this book")%><br>
+                <%= label_tag(:read, "Already read this book") %><br>
                   
                 <%= check_box_tag(:want_read)%>
                 <%= label_tag(:want_read, "I want to read this book")%><br>
@@ -32,25 +28,8 @@
                 <%= check_box_tag(:want_own)%>
                 <%= label_tag(:want_own, "I want to own this book")%><br>
             </p></td>
-    
-            <!--<p><div class="dropdown">
-                <button class = "btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown">Author
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <%# for (1..12).each do |a| %>
-                        <option value><%#=a%></option><br>
-                    <%#end%>
-                </ul>
-            </div></p>-->
 
-    <!--<div class="dropdown">
-        <button class = "btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown">Author
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <%# @authors.each do |a| %>
-                <%# a.fName %><#%a.lName%>
-            <%#end%>
-        </ul>-->
-                <%= f.submit "Submit", class: 'btn btn-primary' %>
+                <%= f.submit "Save Changes", class: 'btn btn-primary' %>
+                <%= %>
         <% end %>
 </div>
