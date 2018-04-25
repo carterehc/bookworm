@@ -56,7 +56,7 @@
                                 <%end%></td>
                                 <td><%=book.ISBN%></td>
                                 <td><%= book.tag%></td>
-                                <td>
+                                <td><%= link_to "Edit", edit_book_path %>   |   <%= link_to "Delete", book_path(book.id), method: :delete %></td>
                 <!--</th>-->
                                 </tr>
                             <% end%>
