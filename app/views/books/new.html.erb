@@ -16,8 +16,8 @@
                 <%= f.text_field :author_last %>
             </p></td>
             <td><p>
-                <%= f.label :yr_published%><br>
-                <%= f.text_field :yr_published%>
+                <%= label_tag(:yr_published, "Year Published ")%>    
+                <%= select_year(Date.today, :start_year => Time.now.year, :end_year => Time.now.year - 400, :field_name => :yr_published, ) %>
             </p></td>
             <td><p>
                 <%= f.label :ISBN %><br>
@@ -26,7 +26,14 @@
             <td><p>  
                 <%= check_box_tag(:read)%>
                 <%= label_tag(:read, "Already read this book")%><br>
-                  
+                
+                <%= label_tag(:yr_read, "Read in ")%>    
+                <%= select_year(Date.today, :start_year => Time.now.year, :end_year => Time.now.year - 95, :field_name => :yr_read, ) %><br>
+                <br>
+                <%= label_tag(:times_read, "Times Read")%>
+                <%= number_field_tag(:times_read)%><br>
+                <br>
+
                 <%= check_box_tag(:want_read)%>
                 <%= label_tag(:want_read, "I want to read this book")%><br>
       
@@ -36,6 +43,12 @@
                 <%= check_box_tag(:want_own)%>
                 <%= label_tag(:want_own, "I want to own this book")%><br>
             </p></td>
+            
+            <td><p>
+                <%= f.label :tag %><br>
+                <%= f.text_field :tag %>
+            </p></td>
+            
     
             <!--<p><div class="dropdown">
                 <button class = "btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown">Author
