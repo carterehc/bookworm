@@ -65,16 +65,19 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gem 'execjs'
+
+###############See if used
+#gem 'execjs'    apparently don't need
 # See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'therubyracer', platforms: :ruby
+#gem 'therubyracer', platforms: :ruby    #don't seem to need
 
 gem 'jquery-datatables-rails'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-sass', '3.3.7'
-gem 'will_paginate', '3.1.6'
-gem 'bootstrap-will_paginate', '1.0.0'
+#won't need until further notice
+#gem 'will_paginate', '3.1.6'
+#gem 'bootstrap-will_paginate', '1.0.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
