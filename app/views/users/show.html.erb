@@ -1,10 +1,6 @@
 <% provide(:title, "#{@user.username} | My Books")%>
 <%= render 'layouts/home_nav' %>
-<script>
-  $(document).ready(function() {
-    $('.books_table').dataTable();
-  } );
-</script>
+
 <%if @user.books.any?%>
         <h2><%= "#{@user.username}'s " %>Books (<%= @user.books.count %>)</h2>
             <div class="table-responsive">
@@ -68,7 +64,6 @@
                     </tbody>
                 </table>
             </div>
-        <%= will_paginate @books %>
             
     <%else%>
         <h2><%= "#{@user.username} has #{@user.books.count} books. Add a book." %></h2>
