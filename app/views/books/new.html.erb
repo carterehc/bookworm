@@ -24,23 +24,23 @@
                 <%= f.text_field :ISBN %>
             </p></td>
             <td><p>  
-                <%= check_box_tag(:read)%>
-                <%= label_tag(:read, "Already read this book")%><br>
+                <%= check_box_tag('book[read]')%>
+                <%= label_tag('book[read]', "Have read this book")%><br>
                 
                 <%= label_tag(:yr_read, "Read in ")%>    
                 <%= select_year(Date.today, :start_year => Time.now.year, :end_year => Time.now.year - 95, :field_name => :yr_read, ) %><br>
                 <br>
-                <%= label_tag(:times_read, "Times Read")%>
-                <%= number_field_tag(:times_read)%><br>
+                <%= label_tag('book[times_read]', "Times Read")%>
+                <%= number_field_tag('book[times_read]')%><br>
                 <br>
 
-                <%= check_box_tag(:want_read)%>
+                <%= check_box_tag('book[want_read]')%>
                 <%= label_tag(:want_read, "I want to read this book")%><br>
       
-                <%=check_box_tag(:own) %>
+                <%=check_box_tag('book[own]') %>
                 <%= label_tag(:own, "I own this book")%><br>
       
-                <%= check_box_tag(:want_own)%>
+                <%= check_box_tag('book[want_own]')%>
                 <%= label_tag(:want_own, "I want to own this book")%><br>
             </p></td>
             
