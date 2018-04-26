@@ -1,11 +1,11 @@
 <% provide(:title, 'New Book') %>
 <%= render 'layouts/home_nav'%>
 <h1>New Book</h1>
-<div class='row'>
+<div class='center'>
         <%= form_for(@book) do | f| %>
             <td><p>
               <%= f.label :title %><br>
-              <%= f.text_field :title %> <!--form.method-->
+              <%= f.text_field :title , class: 'form_control'%> <!--form.method-->
             </p></td>
             <td><p>
                 <%= f.label :author_first %><br>
@@ -37,7 +37,7 @@
                 <%= check_box_tag('book[read]')%>
                 <%= label_tag('book[read]', "Have read this book")%><br>
                 
-                <%=f.label(:yr_read)%>    
+                <%=f.label(:yr_read)%>
                 <%#= select_year(Date.today, :start_year => Time.now.year, :end_year => Time.now.year - 95, :field_name => :yr_read, ) %><br>
                 <%= f.text_field :yr_read%><br>
                 <br>
@@ -46,11 +46,10 @@
             </p></td>
             
             <td><p>
-                <%= f.label :tag %><br>
-                <%= f.text_field :tag %>
+              <%= f.label :tag %><br>
+              <%= f.text_field :tag , class: 'form_control'%>
             </p></td>
-            
-    
+
             <!--<p><div class="dropdown">
                 <button class = "btn btn-outline-success dropdown-toggle" type="button" data-toggle="dropdown">Author
                     <span class="caret"></span></button>

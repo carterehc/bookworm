@@ -1,7 +1,7 @@
 <% provide(:title, 'Edit Book') %>
 <%= render 'layouts/home_nav'%>
 <h2><%= "Edit Book: #{@book.title}" %> </h2>
-<div class='row'>
+<div class='center'>
         <%= form_for(@book) do | f| %>
             <td><p>
                 <%= f.label :author_first %><br>
@@ -42,7 +42,7 @@
                         
             <td><p>
                 <%= f.label :tag %><br>
-                <%= f.text_field :tag, :value => @book.tag%>
+                <%= f.text_field :tag, :value => @book.tag, class: 'form_control'%>
             </p></td>
 
                 <%= f.submit "Save Changes", class: 'btn btn-primary' %>
