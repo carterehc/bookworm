@@ -5,8 +5,8 @@ class Book < ApplicationRecord
     validates :title, presence: true
     validates :author_first, length: {maximum: 75}    #I don't think there are many names longer than 75 characters
     validates :author_last, length: {maximum: 75 }
-    validates :yr_read, length: {minimum: 4, maximum: 4}
-    validates :yr_published, length: {minimum: 1, maximum: 4}
+    validates :yr_read, length: {maximum: 4}
+    validates :yr_published, length: {maximum: 4}
     
     default_scope -> {order(title: :desc)}    #validates :
 end

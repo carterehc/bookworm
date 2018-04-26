@@ -71,5 +71,5 @@
         <%= will_paginate @books %>
             
     <%else%>
-        <h2><%= "#{@user.username} has no books. Add a " %>Books (<%= @user.books.count %>)</h2>
+        <h2><%= "#{@user.username} has #{@user.books.count} books. Add a book." %></h2>
     <%end%>
