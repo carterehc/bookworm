@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use mysql as the database for Active Record
@@ -20,7 +19,7 @@ gem 'execjs'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 gem 'bcrypt'    #for passwords
-gem 'jquery-datatables-rails'
+#gem 'jquery-datatables-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -28,6 +27,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-turbolinks'
 
 gem 'jquery-rails'
 
@@ -39,11 +39,12 @@ gem 'jquery-rails'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-sass', '3.3.7'
-gem 'will_paginate', '3.1.6'
-gem 'bootstrap-will_paginate', '1.0.0'
-gem 'octicons'
+gem 'autoprefixer-rails'
+#gem 'will_paginate', '3.1.6'
+#gem 'bootstrap-will_paginate', '1.0.0'
+#gem 'octicons'
 
-
+gem 'bootstrap-table-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
