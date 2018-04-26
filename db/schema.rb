@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425222209) do
+ActiveRecord::Schema.define(version: 20180426065717) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -19,8 +19,6 @@ ActiveRecord::Schema.define(version: 20180425222209) do
 
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-    t.date "yr_read"
-    t.date "yr_published"
     t.boolean "read"
     t.boolean "own"
     t.string "ISBN"
@@ -35,6 +33,8 @@ ActiveRecord::Schema.define(version: 20180425222209) do
     t.bigint "user_id"
     t.string "author_first"
     t.string "author_last"
+    t.integer "yr_read"
+    t.integer "yr_published"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["user_id"], name: "index_books_on_user_id"
   end

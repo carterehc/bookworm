@@ -30,10 +30,14 @@
                             <td class = "left"><%= book.title %></td>
                             <td class = "left"><%= "#{book.author_first} #{book.author_last}" %></td>
                             <td><%= book.yr_published %></td>
-                            <td><% if book.read? %>
-                                <%= "Read" %>
-                            <%else%>
-                                <%= "Want to read" %>    <!--if book is not read, assumed want to read-->
+                            <td><% if book.want_read? %>
+                                <%= "Want to read" %>
+                            <% else %>
+                                <% if book.read?%>
+                                    <%= "Read" %>    <!--if book is not read, assumed want to read-->
+                                    <%else%>
+                                    <%= "Want to read"%>
+                                    <%end%>
                             <%end%></td>
                             <td><% if book.yr_read?%>
                                 <%= book.yr_read%>
