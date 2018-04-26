@@ -16,8 +16,8 @@
                 <%= f.text_field :author_last %>
             </p></td>
             <td><p>
-                <%= label_tag(:yr_published, "Year Published ")%>    
-                <%= select_year(Date.today, :start_year => Time.now.year, :end_year => Time.now.year - 400, :field_name => :yr_published, ) %>
+                <%= f.label(:yr_published)%>    
+                <%= f.select :yr_published, (Time.zone.now.year - 400)..(Time.zone.now.year + 1) %>
             </p></td>
             <td><p>
                 <%= f.label :ISBN %><br>
