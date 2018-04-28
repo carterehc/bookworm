@@ -6,7 +6,11 @@ class UsersController < ApplicationController
     
   def show
     @user = User.find(params[:id])
-    @books = @user.books.order("#{sort_column} #{sort_direction}")
+    if params[:search]
+      @books = @user.books.where("title like ? OR author_first like ? OR author_last like ? OR yr_published like ? OR yr_read like ? OR ISBN like ? OR tag like ?", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%").order("#{sort_column} #{sort_direction}")
+    else
+      @books = @user.books.order("#{sort_column} #{sort_direction}")
+    end
   end
   
   def new
