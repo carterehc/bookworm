@@ -1,17 +1,5 @@
 <% provide(:title, "#{@user.username} | My Books")%>
 <%= render 'layouts/home_nav' %>
-<!--<style>
-th {
-    cursor: pointer;
-}
-
-tr:nth-child(even){
-    background-color: #000;
-}
-
-</style>-->
-
-
 
 <%if @user.books.any?%>
         <h2><%= "#{@user.username}'s " %>Books (<%= @user.books.count %>)</h2>
@@ -77,48 +65,3 @@ tr:nth-child(even){
     <%else%>
         <h2><%= "#{@user.username} has #{@user.books.count} books. Add a book." %></h2>
     <%end%>
-
-<!--<script>
-function sortTable(n){
-    var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-    table = document.getElementById("books_table");
-    switching = true;
-    //set sorting direction to ascending
-    dir = "asc";
-    
-    while(switching){
-        switching = false;
-        rows = table.getElementsByTagName("TR");
-        
-        for (i = 1; i < (rows.length - 1); i++){
-            shouldSwitch = false;
-        
-            x = rows[i].getElementsByTagName("TD")[n];
-            y = rows[i + 1].getElementsByTagName("TD")[n];
-        
-            if (dir == "asc"){
-                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
-                    shouldSwitch = true;
-                    break;
-                }
-            } else if (dir == "desc"){
-                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()){
-                    shouldSwitch = true;
-                    break;
-                }
-            }
-        
-        }
-        if (shouldSwitch){
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            switchcount ++;
-        } else {
-            if(switchcount == 0 && dir == "asc"){
-                dir = "desc";
-                switching = true;
-            }
-        }
-    }
-}
-</script>-->
