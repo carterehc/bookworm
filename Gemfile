@@ -60,9 +60,9 @@ group :development do
   #added
   gem 'listen', '>= 3.0.5', '< 3.2'    
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring'    #find out if used
   #added
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.0.0'    #find out if used
 end
 
 
@@ -71,7 +71,7 @@ end
 # See https://github.com/rails/execjs#readme for more supported runtimes
 #gem 'therubyracer', platforms: :ruby    #don't seem to need
 
-gem 'jquery-datatables-rails'
+#gem 'jquery-datatables-rails'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-sass', '3.3.7'

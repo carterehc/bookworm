@@ -8,5 +8,5 @@ class Book < ApplicationRecord
     validates :yr_read, length: {maximum: 4}
     validates :yr_published, length: {maximum: 4}
     
-    default_scope -> {order(title: :desc)}    #validates :
+    #default_scope -> {order(title: :desc)}    #validates :
 end

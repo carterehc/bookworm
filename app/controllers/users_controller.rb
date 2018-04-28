@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :show]
   before_action :correct_user, only: [:edit, :update, :show]
+  
+  helper_method :sort_column, :sort_direction
     
   def show
     @user = User.find(params[:id])
-    @books = @user.books
+    @books = @user.books.order("#{sort_column} #{sort_direction}")
   end
   
   def new
@@ -44,5 +46,17 @@ class UsersController < ApplicationController
     def correct_user    #logged in users can access only their pages
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
+    end
+    
+    def sortable_columns
+      ["title", "author_first", "author_last", "yr_published", "want_read", "yr_read", "times_read", "own", "ISBN", "tag"]
+    end
+    
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "title"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
