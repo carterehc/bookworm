@@ -19,9 +19,9 @@
                             <th scope = "col"><%= sort_link "author_first", "Author First" %></th>
                             <th scope = "col"><%= sort_link "author_last", "Author Last" %></th>
                             <th scope = "col"><%= sort_link "yr_published", "Published" %></th>
-                            <th scope = "col"><%= sort_link "want_read", "Read" %></th>
-                            <th scope = "col"><%= sort_link "yr_read", "Year Read" %></th>
+                            <th scope = "col"><%= sort_link "want_read", "Want to Read" %></th>
                             <th scope = "col"><%= sort_link "times_read", "Times Read" %></th>
+                            <th scope = "col"><%= sort_link "yr_read", "Year Read" %></th>
                             <th scope = "col"><%= sort_link "own" %></th>
                             <th scope="col"><%= sort_link "ISBN", "ISBN" %></th>
                             <th scope = "col"><%= sort_link "tag" %></th>
@@ -36,10 +36,15 @@
                             <td class = "left"><%= "#{book.author_first}"%></td>
                             <td class = "left"><%= "#{book.author_last}"%></td>
                             <td><%= book.yr_published %></td>
-                            <td><% if book.read?%>
-                                    <%= "Read" %>    <!--if book is not read, assumed want to read-->
+                            <td><% if book.want_read?%>
+                                    <%= "Yes" %>    <!--if book is not read, assumed want to read-->
                                     <%else%>
-                                    <%= "Want to read"%>
+                                    <%= "No"%>
+                            <%end%></td>
+                            <td><%if book.times_read?%>
+                                    <%= book.times_read%>
+                            <%else%>
+                                <%= "----" %>
                             <%end%></td>
                             <td><% if book.yr_read?%>
                                 <%= book.yr_read%>
@@ -47,11 +52,7 @@
                                 <%= "----" %>
                             <%end%>
                             </td>
-                            <td><%if book.times_read?%>
-                                    <%= book.times_read%>
-                            <%else%>
-                                <%= "----" %>
-                            <%end%></td>
+                            
                             <td><% if book.own? %>
                                 <%= "Own" %>
                             <%else%>

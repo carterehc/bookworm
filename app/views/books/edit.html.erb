@@ -29,9 +29,6 @@
                 <%= check_box_tag('book[want_read]')%>
                 <%= label_tag(:want_read, "I want to read this book")%><br>
                 
-                <%= check_box_tag('book[read]')%>
-                <%= label_tag(:read, "Have read this book") %><br>
-                
                 <%= label_tag(:yr_read, "Year read ")%>    
                 <%#= select_year(Date.today, :start_year => Time.now.year, :end_year => Time.now.year - 95, :field_name => :yr_read, ) %><br>
                 <%= f.text_field :yr_read, :value => @book.yr_read%><br>
