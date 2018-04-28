@@ -68,7 +68,7 @@
                         <% end%>
                     </tbody>
                 </table>
-            <!--</div>-->
+            <%= will_paginate @books%>
             
     <%else%>
         <h2><%= "#{@user.username} has #{@user.books.count} books. Add a book." %></h2>

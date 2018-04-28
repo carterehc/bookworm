@@ -76,7 +76,7 @@ end
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'bootstrap-sass', '3.3.7'
 #won't need until further notice
-#gem 'will_paginate', '3.1.6'
+gem 'will_paginate', '3.1.6'
 #gem 'bootstrap-will_paginate', '1.0.0'
 
 # Use Redis adapter to run Action Cable in production
