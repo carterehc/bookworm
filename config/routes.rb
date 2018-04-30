@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  resources :books, only: [:new, :create, :edit, :update, :delete]
+  resources :bookss
   resources :users, only: [:show, :new, :create, :edit, :update]
   root 'static_pages#home'
   get '/signup', to: 'users#new'
