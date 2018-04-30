@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if params[:search]
       @books = @user.books.where("title like ? OR author_first like ? OR author_last like ? OR yr_published like ? OR yr_read like ? OR ISBN like ? OR tag like ?", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%").order("#{sort_column} #{sort_direction}")
     else
-      @books = @user.books.order("#{sort_column} #{sort_direction}").paginate(:per_page => 5, :page => params[:page])
+      @books = @user.books.order("#{sort_column} #{sort_direction}").paginate(:per_page => 15, :page => params[:page])
     end
   end
   

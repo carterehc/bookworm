@@ -34,7 +34,7 @@
                 <%= f.text_field :yr_read, :value => @book.yr_read%><br>
                 <br>
                 <%= label_tag('books[times_read]', "Times Read")%><br>
-                <%= number_field_tag('books[times_read]')%><br>
+                <%= number_field('books[times_read]', method: :post)%><br>
             </p></td>
                         
             <td><p>
