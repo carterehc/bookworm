@@ -1,34 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 ## License
 All source code is available under the MIT License and the Beerware License.
 
 ##Getting started
 
-To get started, clone the repo and then install gems by running 
+* To get started, clone the repo and then install gems by running 
 $ bundle install
 
-Migrate the db
+* Initialize the db
+$ mysql-ctl start
+
+* Migrate the db
 $ rails db:migrate
 
+* Run Server
+$ rails s -b $IP -p $PORT
 
-Ruby version: ruby 2.3.4
+navigate to http://bookworm-[c9username].c9users.io/
 
 * System dependencies
+Ruby version: ruby 2.3.4
 
-* Configuration
+Rails 5.1.6
 
-* Database creation
+mysql2 >= 0.3.18 < 0.5
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
