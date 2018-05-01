@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  get 'books/index'
 
-  get 'books/add'
+  get 'sessions/new'
 
-  get 'books/delete'
-
-  get 'books/update'
-
-  get 'welcome/index'
+  resources :books
+  resources :users, only: [:show, :new, :create, :edit, :update]
+  root 'static_pages#home'
+  get '/signup', to: 'users#new'
+  
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

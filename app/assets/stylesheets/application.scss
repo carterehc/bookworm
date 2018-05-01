@@ -14,7 +14,116 @@
  
 //custom bootstrap variables must be set or imported before bootstrap
 
-$navbar-default-bg: #2ECC71;
+//$navbar-default-bg: #2ECC71;
 
 
 @import "bootstrap";
+//@import "bootstrap-sprockets";
+
+/*header*/
+.navbar{
+    
+    background-color: #006600;
+    border-color: #006600;   
+}
+
+/*universal*/
+body{
+    padding-top: 70px;
+}
+
+section{
+    overflow: auto;
+}
+
+textarea{
+    resize: vertical;
+}
+
+.center{
+    text-align: center;
+}
+
+.center h1{
+    margin-bottom: 12px;
+}
+
+/*fonts*/
+
+h1, h2, h3, h4, h5, h6{
+    line-height: 1;
+}
+
+h1{
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #000;
+}
+
+
+h2{
+    font-size: 1.7em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: #000;
+}
+
+p{
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: #000;
+}
+
+/*books*/
+.table {
+    border-radius: 5px;
+    width: 50%;
+    margin: 0px;
+    text-align: center;
+    float: none;
+}
+
+.left{
+    text-align: left;
+}
+
+.table th{
+    text-align: center;
+}
+
+.btn-primary{
+    background-color: #006600;
+    border-color: #006600;
+}
+
+.btn-primary:hover{
+    background-color: #00cc00;
+    border-color: #00cc00;
+}
+
+#error_explanation{
+    color: red;
+    ul{
+        color: red;
+        margin: 0 0 50px 0;
+    }
+}
+
+.field_with_errors{
+    @extend .has-error;
+    .form_control{
+        color: $state-danger-text;
+    }
+}
+
+@mixin box_sizing{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}

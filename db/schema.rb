@@ -10,19 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403153516) do
+ActiveRecord::Schema.define(version: 20180426065717) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "fName"
-    t.string "lName"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
-    t.date "yr_read"
-    t.date "yr_published"
     t.boolean "read"
     t.boolean "own"
     t.string "ISBN"
@@ -34,8 +30,23 @@ ActiveRecord::Schema.define(version: 20180403153516) do
     t.datetime "updated_at", null: false
     t.bigint "author_id"
     t.string "tag"
+    t.bigint "user_id"
+    t.string "author_first"
+    t.string "author_last"
+    t.integer "yr_read"
+    t.integer "yr_published"
     t.index ["author_id"], name: "index_books_on_author_id"
+    t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "books", "authors"
+  add_foreign_key "books", "users"
 end

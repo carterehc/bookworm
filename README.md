@@ -3,7 +3,17 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+## License
+All source code is available under the MIT License and the Beerware License.
+
+##Getting started
+
+To get started, clone the repo and then install gems by running 
+$ bundle install
+
+Migrate the db
+$ rails db:migrate
+
 
 Ruby version: ruby 2.3.4
 

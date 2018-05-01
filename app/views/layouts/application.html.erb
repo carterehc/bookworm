@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookworm</title>
+    <title><%= full_title(yield(:title)) %> </title>
+    <%= stylesheet_link_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag '//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-
+  
   <body>
-    <nav class="navbar navbar-dark" style="background-color: #9CCC65">
-       <!--this is here until I can find a search icon-->
-       <div>
-        <button type="button" class ="btn btn-outline-success" style = "color: #006400">SEARCH</button> 
-        <!--data-toggle = "button" aria-pressed="false" autocomplete = "off"-->
-        <button type = "button" class = "btn btn-link" style = "color:#006400">HOME</button>
-        <button type = "button" class = "btn btn-link" style = "color:#006400">MY BOOKS</button>
-      </div>
-      
-      <div float = "right">
-        <!--until I can get a logout button down-->
-        <button type = "button" class = "btn btn-link" style = "color: #006400">LOGOUT</button>
-      </div>
-      
-    </nav>
-    <%= yield %>
+    <%flash.each do |message_type, message| %>
+      <div class = "alert alert -<%= message_type %>" <%= message %></div>
+    <%end%>
+
+    <div class="container">
+      <%=yield %>
+      <%#= debug(params) if Rails.env.development? %>
+    </div>
   </body>
+  <%#=render 'layouts/footer'%>
 </html>
