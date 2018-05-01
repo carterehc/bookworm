@@ -33,7 +33,7 @@ module SessionsHelper
     
     def redirect_back_or(default)    #for friendly forwarding. unused
         redirect_to(session[:forwarding_url] || default)
-        session.delet(:forwarding_url)
+        session.delete(:forwarding_url)
     end
     
     def store_location    #for friendly forwarding. unused
